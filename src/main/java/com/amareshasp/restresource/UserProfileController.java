@@ -57,7 +57,7 @@ public class UserProfileController {
 
     }
 
-    @CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net"})
+    @CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net:443"})
     @GetMapping("/get-by-mail")
     @ResponseBody
     public ResponseEntity<User> getUserbyEmail(@RequestParam String userEmail) {
