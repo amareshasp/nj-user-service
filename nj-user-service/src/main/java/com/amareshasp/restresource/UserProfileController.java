@@ -4,6 +4,7 @@ import com.amareshasp.dao.UserRepository;
 import com.amareshasp.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -22,11 +23,22 @@ public class UserProfileController {
 
     private final MongoTemplate mongoTemplate ;
 
+
+    @Value("${mongo-url}")
+    private String connectionString;
+
     public UserProfileController(UserRepository userRepository,MongoTemplate mongoTemplate) {
         this.userRepository = userRepository;
         this.mongoTemplate = mongoTemplate;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping(value = "/getm")
+    public String getMongo() {
+
+        return connectionString;
+
+    }
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
     public String saveUser(@RequestBody User user) {
