@@ -32,7 +32,7 @@ public class UserProfileController {
         this.mongoTemplate = mongoTemplate;
     }
 
-    //@CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin("http://localhost:4200")
     @GetMapping(value = "/getm")
     public String getMongo() {
 
@@ -57,7 +57,7 @@ public class UserProfileController {
 
     }
 
-    //@CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net"})
     @GetMapping("/get-by-mail")
     @ResponseBody
     public ResponseEntity<User> getUserbyEmail(@RequestParam String userEmail) {
