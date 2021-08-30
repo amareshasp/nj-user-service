@@ -24,7 +24,7 @@ public class UserProfileController {
     private final MongoTemplate mongoTemplate ;
 
 
-    @Value("${mongo-url}")
+    @Value("${mongo-url:${spring.data.mongodb.uri}}")
     private String connectionString;
 
     public UserProfileController(UserRepository userRepository,MongoTemplate mongoTemplate) {
@@ -57,7 +57,7 @@ public class UserProfileController {
 
     }
 
-    @CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net:443"})
+    //@CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net:443"})
     @GetMapping("/get-by-mail")
     @ResponseBody
     public ResponseEntity<User> getUserbyEmail(@RequestParam String userEmail) {
