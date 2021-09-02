@@ -35,7 +35,7 @@ public class NjUserServiceApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**").allowedOrigins("http://localhost:4200","https://newsjuice.azurewebsites.net:443",
-						"http://newsjuice.azurewebsites.net:443");
+						"http://newsjuice.azurewebsites.net:443","https://newsjuice.infoginie.com","https://newsjuice.infoginie.com:8443");
 			}
 		};
 	}
