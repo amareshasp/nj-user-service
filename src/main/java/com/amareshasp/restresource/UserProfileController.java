@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net:8443"})
 @RestController
 @RequestMapping("/user")
 public class UserProfileController {
@@ -58,8 +59,7 @@ public class UserProfileController {
 
     }
 
-    //@CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net:443"})
-    @GetMapping("/get-by-mail")
+   @GetMapping("/get-by-mail")
     @ResponseBody
     public ResponseEntity<User> getUserbyEmail(@RequestParam String userEmail) {
         logger.info("Fetching user data by email");
