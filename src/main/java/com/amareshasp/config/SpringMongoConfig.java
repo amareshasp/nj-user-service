@@ -13,8 +13,8 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 public class SpringMongoConfig {
 
     //@Value("${spring.data.mongodb.uri}")
-    //@Value("${mongo-url:${spring.data.mongodb.uri}}")
-    @Value("${mongo-url}")
+    @Value("${mongo-url:${spring.data.mongodb.uri}}")
+    //@Value("${mongo-url}")
     private String primaryConnection;
 
 

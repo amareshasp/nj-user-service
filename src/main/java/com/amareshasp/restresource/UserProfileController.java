@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net:8443"})
+@CrossOrigin(origins = {"http://localhost:4200","https://newsjuice.azurewebsites.net","https://newsjuice.azurewebsites.net:8443",
+        "https://newsjuice.infoginie.net","https://newsjuice.infoginie.net:8443" })
 @RestController
 @RequestMapping("/user")
 public class UserProfileController {
@@ -25,8 +26,8 @@ public class UserProfileController {
     private final MongoTemplate mongoTemplate ;
 
 
-    //@Value("${mongo-url:${spring.data.mongodb.uri}}")
-    @Value("${mongo-url}")
+    @Value("${spring.data.mongodb.uri}")
+    //@Value("${mongo-url}")
     private String connectionString;
 
     public UserProfileController(UserRepository userRepository,MongoTemplate mongoTemplate) {
