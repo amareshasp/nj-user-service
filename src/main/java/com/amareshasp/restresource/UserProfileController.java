@@ -26,8 +26,8 @@ public class UserProfileController {
     private final MongoTemplate mongoTemplate ;
 
 
-    @Value("${spring.data.mongodb.uri}")
-    //@Value("${mongo-url}")
+    //@Value("${spring.data.mongodb.uri}")
+    @Value("${mongo-url}")
     private String connectionString;
 
     public UserProfileController(UserRepository userRepository,MongoTemplate mongoTemplate) {
